@@ -1,7 +1,7 @@
-import { CommandInteraction, CommandInteractionOptionResolver, Interaction } from "discord.js";
+import { CommandInteraction } from "discord.js";
 import { ApplicationCommandOptionTypes } from "discord.js/typings/enums";
 import Command from "./command";
-import getStrippedId from '../util';
+import { getStrippedId, updateSettings } from '../util';
 
 
 const watchCommand: Command = {
@@ -17,10 +17,10 @@ const watchCommand: Command = {
             },
         ],
     },
-    run(interaction: CommandInteraction): void {
-        const arg0: string = getStrippedId(interaction.options.getString('channel')!);
-        console.log(arg0);
-        interaction.reply({ content: 'Watching ' + arg0, ephemeral: true }); // ephemeral: nobody can see interaction reply
+    async run(interaction: CommandInteraction): Promise<any> {
+        const channelId: string = getStrippedId(interaction.options.getString('channel')!); // channelId to watch raw string
+        updateSettings('watch_channel_id', channelId);
+        interaction.reply({ content: 'Watching ' + channelId, ephemeral: true }); // ephemeral: nobody can see interaction reply
     }
 }
 

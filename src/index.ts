@@ -11,7 +11,7 @@ const bot: Client = new Client({
     ],
 });
 
-const token: string = 'OTE1NzM4OTY5MDM4Mjc4NjY2.Yaf-Xw.TdpWjlxug1pQT3ZuQGxZuE9orOY';
+const token: string = 'OTE1NzM4OTY5MDM4Mjc4NjY2.Yaf-Xw._C6rW2LS2xWqZ4r1bcuAbYlg_6E';
 const commands = [setOutputCommand, watchCommand, pingCommand];
 
 bot.on('ready', () => {

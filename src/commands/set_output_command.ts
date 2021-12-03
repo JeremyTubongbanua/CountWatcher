@@ -1,14 +1,15 @@
 import Command from './command';
-import { CommandInteraction, Interaction } from 'discord.js';
+import { CommandInteraction } from 'discord.js';
+import { updateSettings } from '../util';
 
 const setOutputCommand: Command = {
     commandBuild: {
         name: 'setoutput',
         description: 'Sets this channel as the output channel.',
     },
-    run(interaction: CommandInteraction): void {
-        console.log(interaction);
-        interaction.reply(interaction.member.toString() + ' Setting this as output channel beep boop');
+    async run(interaction: CommandInteraction): Promise<any> {
+        updateSettings('output_channel_id', interaction.channelId);
+        interaction.reply({ content: interaction.member.toString() + ' Setting this as output channel beep boop', ephemeral: true });
     }
 }
 
