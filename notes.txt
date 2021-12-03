@@ -1,0 +1,2 @@
+1. command: !setoutput
+2. command: !watch <channel_id>
