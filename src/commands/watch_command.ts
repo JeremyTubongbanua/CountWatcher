@@ -12,7 +12,7 @@ const watchCommand: Command = {
             {
                 type: ApplicationCommandOptionTypes.STRING,
                 name: 'channel',
-                description: 'desired channel',
+                description: 'Channel to watch for counting.',
                 required: true,
             },
         ],
@@ -20,7 +20,7 @@ const watchCommand: Command = {
     async run(interaction: CommandInteraction): Promise<any> {
         const channelId: string = getStrippedId(interaction.options.getString('channel')!); // channelId to watch raw string
         updateSettings('watch_channel_id', channelId);
-        interaction.reply({ content: 'Watching ' + channelId, ephemeral: true }); // ephemeral: nobody can see interaction reply
+        interaction.reply({ content: `${interaction.member.toString()} Now watching <#${channelId}>.`, ephemeral: false }); // ephemeral: nobody can see interaction reply
     }
 }
 

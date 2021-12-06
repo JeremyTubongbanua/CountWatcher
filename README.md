@@ -45,3 +45,7 @@ Google Cloud:
 -   `node -v`7. Check node version
 -   `git clone <url>` 8. Clone git hub repo OR
 -   `gcloud init` 9. Initialize google cloud, login, enter project details, etc. (only needed if using buckets)
+
+todo automatic delete-
+todo leaderboard
+todo count command
