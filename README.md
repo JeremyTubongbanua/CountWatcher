@@ -45,6 +45,9 @@ Google Cloud:
 -   `node -v`7. Check node version
 -   `git clone <url>` 8. Clone git hub repo OR
 -   `gcloud init` 9. Initialize google cloud, login, enter project details, etc. (only needed if using buckets)
+-   `sudo nano out/index.js` - edit out/index.js and insert token (Ctrl X to exit and save)
+-   `node out/index.js` to run
+-   `nohup node out/index.js &>> activity.log &` - NO hang up command, runs bot 24/7 without SSH window open, then put terminal logs in activity.log
 
 todo automatic delete-
 todo leaderboard

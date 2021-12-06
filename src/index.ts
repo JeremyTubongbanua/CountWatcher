@@ -13,7 +13,7 @@ const bot: Client = new Client({
     ],
 });
 
-const token: string = '';
+const token: string = ''; // to update
 const guildId = '689504561521623050';
 const commands = [setOutputCommand, watchCommand, pingCommand, leaderboardCommand];
 var guild: Guild | undefined;
